@@ -34,4 +34,4 @@ app.post("/contacto", async (req, res) => {
   }
 });
 
-module.exports = app;
+export default app;
