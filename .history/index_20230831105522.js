@@ -11,10 +11,6 @@ app.use(cors({ origin: true }));
 app.use(express.static(__dirname));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  console.log("Esperando mensaje");
-  res.send("Esperando mensaje");
-});
 app.post("/contacto", async (req, res) => {
   const formattedContent = Object.entries(req.body)
     .map(([key, value]) => `${key}: ${value}`)
