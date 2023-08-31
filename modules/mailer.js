@@ -3,8 +3,8 @@ const KEY_GOOGLE = process.env.KEY_GOOGLE;
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 25,
-  secure: false,
+  port: 465,
+  secure: true,
   auth: {
     user: "ocean.viewjob2023@gmail.com",
     pass: KEY_GOOGLE,

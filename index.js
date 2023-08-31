@@ -1,11 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 require("dotenv").config();
 const port = process.env.PORT;
 const { transporter } = require("./modules/mailer.js");
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors({ origin: true }));
 app.use(express.static(__dirname));
 app.use(express.json());
 
@@ -33,5 +35,3 @@ app.listen(port, () => {
   console.clear();
   console.log(`Servidor en funcionamiento en http://localhost:${port}`);
 });
-
-module.exports = app;
